@@ -1,0 +1,5 @@
+---
+# tasks file for test-role-1
+
+- name:
+  ping:
