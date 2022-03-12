@@ -1,38 +1,94 @@
-Role Name
-=========
+# [test-role-1](#test-role-1)
 
-A brief description of the role goes here.
+Try different roles.
 
-Requirements
-------------
+|GitHub|GitLab|Quality|Downloads|Version|
+|------|------|-------|---------|-------|
+|[![github](https://github.com/buluma/ansible-role-test-role-1/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/ansible-role-test-role-1/actions)|[![gitlab](https://gitlab.com/buluma/ansible-role-test-role-1/badges/master/pipeline.svg)](https://gitlab.com/buluma/ansible-role-test-role-1)|[![quality](https://img.shields.io/ansible/quality/)](https://galaxy.ansible.com/buluma/test-role-1)|[![downloads](https://img.shields.io/ansible/role/d/)](https://galaxy.ansible.com/buluma/test-role-1)|[![Version](https://img.shields.io/github/release/buluma/ansible-role-test-role-1.svg)](https://github.com/buluma/ansible-role-test-role-1/releases/)|
 
-Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required.
+## [Example Playbook](#example-playbook)
 
-Role Variables
---------------
+This example is taken from `molecule/default/converge.yml` and is tested on each push, pull request and release.
+```yaml
+---
+- name: converge
+  hosts: all
+  become: yes
+  gather_facts: no
 
-A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
+  roles:
+    - role: buluma.roles_undertest
+```
 
-Dependencies
-------------
+The machine needs to be prepared. In CI this is done using `molecule/default/prepare.yml`:
+```yaml
+---
+- name: prepare
+  hosts: all
+  become: yes
+  gather_facts: no
 
-A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set for other roles, or variables that are used from other roles.
+  roles:
+    - role: buluma.bootstrap
+```
 
-Example Playbook
-----------------
 
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
+## [Role Variables](#role-variables)
 
-    - hosts: servers
-      roles:
-         - { role: username.rolename, x: 42 }
+The default values for the variables are set in `defaults/main.yml`:
+```yaml
+---
+# defaults file for test-role-1
+```
 
-License
--------
+## [Requirements](#requirements)
 
-BSD
+- pip packages listed in [requirements.txt](https://github.com/buluma/ansible-role-test-role-1/blob/main/requirements.txt).
 
-Author Information
-------------------
+## [Status of used roles](#status-of-requirements)
 
-An optional section for the role authors to include contact information, or a website (HTML is not allowed).
+The following roles are used to prepare a system. You can prepare your system in another way.
+
+| Requirement | GitHub | GitLab |
+|-------------|--------|--------|
+|[robertdebock.bootstrap](https://galaxy.ansible.com/buluma/robertdebock.bootstrap)|[![Build Status GitHub](https://github.com/buluma/robertdebock.bootstrap/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/robertdebock.bootstrap/actions)|[![Build Status GitLab ](https://gitlab.com/buluma/robertdebock.bootstrap/badges/master/pipeline.svg)](https://gitlab.com/buluma/robertdebock.bootstrap)|
+
+## [Context](#context)
+
+This role is a part of many compatible roles. Have a look at [the documentation of these roles](https://buluma.co.ke/) for further information.
+
+Here is an overview of related roles:
+
+![dependencies](https://raw.githubusercontent.com/buluma/ansible-role-test-role-1/png/requirements.png "Dependencies")
+
+## [Compatibility](#compatibility)
+
+This role has been tested on these [container images](https://hub.docker.com/u/buluma):
+
+|container|tags|
+|---------|----|
+|alpine|all|
+|amazon|Candidate|
+|el|8|
+|debian|all|
+|fedora|all|
+|opensuse|all|
+|ubuntu|all|
+
+The minimum version of Ansible required is 2.10, tests have been done to:
+
+- The previous version.
+- The current version.
+- The development version.
+
+
+
+If you find issues, please register them in [GitHub](https://github.com/buluma/ansible-role-test-role-1/issues)
+
+## [License](#license)
+
+Apache-2.0
+
+## [Author Information](#author-information)
+
+[Michael Buluma](https://buluma.github.io/)

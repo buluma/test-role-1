@@ -1,0 +1,8 @@
+---
+#
+# Ansible managed
+#
+repository:
+  description: Try different roles.
+  homepage: https://buluma.github.io/
+  topics: types, ansible, molecule, tox, playbook, hacktoberfest
